@@ -6,7 +6,7 @@ categories:  Embedded
 tag: 
 	- 嵌入式
 	- BUG
-thumbnail: /img/pexels/circuit.jpeg
+thumbnail: /img/pexels/ai-artificial-intelligence-astronomy-73910.jpg
 toc: true
 
 ---
