@@ -5,7 +5,7 @@ categories:  Course
 tag: 
 	- 电路
 	- 学习
-thumbnail: /img/pexels/chips-circuit-board-computer-4316
+thumbnail: /img/pexels/board-chip-circuits-163170.jpg
 toc: true
 ---
 
