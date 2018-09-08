@@ -98,7 +98,7 @@ void PID_Calc(PID_Regulator_t *pid)
 
 某个函数中调用了这种方式来进行计算PID。
 
-```
+```c
 void RammerSpeedPID( int16_t TargetSpeed )
 {
 	RAMMERSpeedPID.kp  = RAMMER_SPEED_KP_DEFAULTS;
@@ -115,6 +115,7 @@ void RammerSpeedPID( int16_t TargetSpeed )
 函数指针是指向函数的指针变量。函数具有可赋值给指针的物理内存地址，一个函数的函数名就是一个指针，它指向函数的代码。一个函数的地址是该函数的进入点，也是调用函数的地址。将指针指向函数名也就是函数的进入点，就可以达到用指针运行函数的功能。
 
 定义形式：
+
 ```c
 类型 （*指针变量名）（参数列表）；
 ```

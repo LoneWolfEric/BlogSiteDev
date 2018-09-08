@@ -5,7 +5,7 @@ categories:  Control
 tag: 
 	- 控制
 	- RoboMaster
-thumbnail: /img/others/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg
+thumbnail: /img/RoboMaster/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg
 toc: true
 ---
 
