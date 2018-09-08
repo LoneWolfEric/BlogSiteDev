@@ -1,5 +1,5 @@
 ---
-title: "2018暑期RM培训总结”"
+title: "2018暑期RM培训总结"
 date: 2018-08-31
 categories:  Control
 tag: 
