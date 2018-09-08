@@ -2,7 +2,7 @@
 title: "纪念第一次参加技术类比赛：船模大赛"
 date: 2018-05-16
 categories:  Embedded
-thumbnail: img/others/1526477179153.jpeg
+thumbnail: /img/others/1526477179153.jpeg
 tags: 
 	- 嵌入式
 	- 控制 
