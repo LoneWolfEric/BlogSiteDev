@@ -9,7 +9,7 @@ thumbnail: /img/RoboMaster/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg
 toc: true
 ---
 
-![](Analysis-of-gimbal-servo-control-system\v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg)
+![步兵机器人](Analysis-of-gimbal-servo-control-system/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg)
 
 # 什么是随动
 
@@ -29,11 +29,11 @@ toc: true
 
 底盘运动是按照底盘的前后左右移动，所以当云台左右转动后，云台的前方向和底盘的前方向不是同一方向的。当操作手发出前进指令时，机器人会按照底盘的前进方向移动，而不是操作手的视野前方。操作手第一视角得到的反馈效果就是：我TM怎么在平移？（图下情况为向左前方移动）
 
-![如果没有随动](Analysis-of-gimbal-servo-control-system\如果没有随动.PNG)
+![如果没有随动](Analysis-of-gimbal-servo-control-system/如果没有随动.PNG)
 
 如此可以看出来，没有随动系统对于操作手来说简直是灾难！如何解决这个问题呢？只要我们云台左右旋转的时候，底盘也跟随旋转就可以了，达到底盘的前后左右和云台的前后左右相同就可以了，这就是我们随动的目标。（下文中将底盘的前后左右方向和云台的前后左右方向简称为`底盘相对坐标系`和`云台相对坐标系`）
 
-![坐标系](Analysis-of-gimbal-servo-control-system\坐标系.PNG)
+![坐标系](Analysis-of-gimbal-servo-control-system/坐标系.PNG)
 
 # 实现方案
 
@@ -45,7 +45,7 @@ toc: true
 
 ### 云台
 
-![云台](Analysis-of-gimbal-servo-control-system\v2-a05d6bb23890bd780d229a094685b834_hd.jpg)
+![云台](Analysis-of-gimbal-servo-control-system/v2-a05d6bb23890bd780d229a094685b834_hd.jpg)
 
 #### YAW轴电机
 
@@ -59,13 +59,13 @@ YAW轴电机下半部分固定在底盘上，电机轴带动整个云台左右�
 
 #### 陀螺仪 & 磁力计
 
-![6050](Analysis-of-gimbal-servo-control-system\6050.PNG)
+![6050](Analysis-of-gimbal-servo-control-system/6050.PNG)
 
-![方向](Analysis-of-gimbal-servo-control-system\方向.PNG)
+![方向](Analysis-of-gimbal-servo-control-system/方向.PNG)
 
 磁力计，安装在云台上，类似指南针，会告诉我们相对于地面来说，云台转了多少角度。获得的角度是`云台相对坐标系`和`空间绝对坐标系`的差（也就是我们操作手想让转动云台的期望值）。
 
-![开发板](Analysis-of-gimbal-servo-control-system\开发板.PNG)
+![开发板](Analysis-of-gimbal-servo-control-system/开发板.PNG)
 
 ### 底盘
 
@@ -73,7 +73,7 @@ YAW轴电机下半部分固定在底盘上，电机轴带动整个云台左右�
 
 #### 麦克纳姆轮
 
-![麦轮底盘](Analysis-of-gimbal-servo-control-system\v2-da7f9668fcfa8abd37bd15f42faf0a67_hd.jpg)
+![麦轮底盘](Analysis-of-gimbal-servo-control-system/v2-da7f9668fcfa8abd37bd15f42faf0a67_hd.jpg)
 
 为了实现全向移动，底盘使用麦克纳姆轮，能实现左右平移，旋转。
 
@@ -99,7 +99,7 @@ YAW轴电机下半部分固定在底盘上，电机轴带动整个云台左右�
 
 ### 图示
 
-![图示](Analysis-of-gimbal-servo-control-system\图示.PNG)
+![图示](Analysis-of-gimbal-servo-control-system/图示.PNG)
 
 - 蓝色部分为底盘。
 - 红色部分为云台YAW轴电机和码盘。
@@ -114,7 +114,7 @@ YAW轴电机下半部分固定在底盘上，电机轴带动整个云台左右�
 
 操作手通过鼠标或者遥控器发送云台转动角度给定值（`云台相对坐标系`和`空间绝对坐标系`的相差角度），云台YAW轴电机转动。
 
-![云台转动](Analysis-of-gimbal-servo-control-system\云台转动.PNG)
+![云台转动](Analysis-of-gimbal-servo-control-system/云台转动.PNG)
 
 #### 底盘转动
 
@@ -122,13 +122,13 @@ YAW轴电机下半部分固定在底盘上，电机轴带动整个云台左右�
 
 **注意**：云台是通过云台YAW轴电机固定在底盘上的，底盘转动时，云台由于这个固定关系被带动，偏移了我们的设定值。
 
-![底盘转动](Analysis-of-gimbal-servo-control-system\底盘转动.PNG)
+![底盘转动](Analysis-of-gimbal-servo-control-system/底盘转动.PNG)
 
 #### 云台回转
 
 由于云台被底盘带动，IMU检测发现云台没有在我们设定的方向上，于是按与之前相反的方向回转。云台底盘的`相对坐标系`重合，云台-底盘随动系统完成任务。
 
-![云台回转](Analysis-of-gimbal-servo-control-system\云台回转.PNG)
+![云台回转](Analysis-of-gimbal-servo-control-system/云台回转.PNG)
 
 **说明**：这里是将随动的过程单位控制时间无限放大，响应速度无限提升。可以使用这一套方法来理解随动过程，但是实践运动过程中，由于我们控制回路的运行频率非常地高，所以从外面来看，这三个过程是同时完成的，底盘紧紧地跟着云台转动。
 
