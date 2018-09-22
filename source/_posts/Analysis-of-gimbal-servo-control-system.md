@@ -5,11 +5,11 @@ categories:  Control
 tag: 
 	- 控制
 	- RoboMaster
-thumbnail: /img/RoboMaster/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg
+thumbnail: /img/RoboMaster/选区_004.png
 toc: true
 ---
 
-![步兵机器人](Analysis-of-gimbal-servo-control-system/v2-ad9ef1011cb83fff5ef856242ccfc128_r.jpg)
+![步兵机器人](Analysis-of-gimbal-servo-control-system/选区_004.png)
 
 # 什么是随动
 
