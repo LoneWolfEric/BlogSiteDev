@@ -4,7 +4,7 @@ date: 2018-09-23
 categories:  Embedded
 tag: 
 	- 电机
-thumbnail: /img/pexels/aircraft-aviation-blades-40024.jpg
+thumbnail: /img/pexels/选区_005.png
 toc: true
 ---
 
